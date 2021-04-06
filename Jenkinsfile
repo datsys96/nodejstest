@@ -13,7 +13,7 @@ pipeline {
                     sh 'npm test'
                }
           }
-	  stage("test code") {
+	  stage("test junit") {
                steps {
                     junit 'test.xml'
                }
