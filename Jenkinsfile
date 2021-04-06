@@ -21,20 +21,20 @@ pipeline {
      }
     post {
         always {
-        emailext body: 'helle day la jenkin nha', subject: 'test jenkin', to: 'datbeo12c@gmail.com'
+        emailext body: 'helle day la jenkin nha', subject: 'test jenkin', to: 'tuandatithubt@gmail.com'
         }
         success {
 	    sh 'docker build -t nodejstest:1 .'
-            emailext body: 'ok ${DEFAULT_SUBJECT}', subject: '${DEFAULT_CONTENT}', to: 'datbeo12c@gmail.com'
+            emailext body: 'ok ${DEFAULT_SUBJECT}', subject: '${DEFAULT_CONTENT}', to: 'tuandatithubt@gmail.com'
         }
         unstable {
-            emailext body: 'unstable ${DEFAULT_SUBJECT}', subject: '${DEFAULT_CONTENT}', to: 'datbeo12c@gmail.com'
+            emailext body: 'unstable ${DEFAULT_SUBJECT}', subject: '${DEFAULT_CONTENT}', to: 'tuandatithubt@gmail.com'
         }
         failure {
-            emailext body: 'failure ${DEFAULT_SUBJECT}', subject: '${DEFAULT_CONTENT}', to: '$datbeo12c@gmail.com'
+            emailext body: 'failure ${DEFAULT_SUBJECT}', subject: '${DEFAULT_CONTENT}', to: '$tuandatithubt@gmail.com'
         }
         changed {
-            emailext body: 'change ${DEFAULT_SUBJECT}', subject: '${DEFAULT_CONTENT}', to: 'datbeo12c@gmail.com'
+            emailext body: 'change ${DEFAULT_SUBJECT}', subject: '${DEFAULT_CONTENT}', to: 'tuandatithubt@gmail.com'
         }
     }
 
