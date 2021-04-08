@@ -13,8 +13,8 @@ pipeline {
                steps {
                withSonarQubeEnv('sonar') {
 		sh "${scannerHome}/bin/sonar-scanner" 
-		waitForQualityGate abortPipeline: true    
                }
+		waitForQualityGate abortPipeline: true
           }
 		}
           stage("test code") {
