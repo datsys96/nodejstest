@@ -15,6 +15,7 @@ pipeline {
 		sh "${scannerHome}/bin/sonar-scanner"     
                }
           }
+		}
           stage("test code") {
                steps {
                     sh 'npm install'
@@ -46,5 +47,4 @@ pipeline {
             emailext body: 'change ${DEFAULT_SUBJECT}', subject: '${DEFAULT_CONTENT}', to: 'tuandatithubt@gmail.com'
         }
     }
-
 }
