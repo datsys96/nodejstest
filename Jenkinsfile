@@ -1,9 +1,18 @@
 pipeline {
      agent { label 'jenkinslave1' }
+     environment {
+        scannerHome = tool 'sonarscan’
+     }
      stages {
           stage("clone code") {
                steps {
                     git 'https://github.com/datsys96/nodejstest.git'
+               }
+          }
+	   stage("sona scaner") {
+               steps {
+               withSonarQubeEnv('sonar') {
+		sh "${scannerHome}/bin/sonar-scanner"     
                }
           }
           stage("test code") {
