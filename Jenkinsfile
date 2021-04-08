@@ -1,7 +1,7 @@
 pipeline {
      agent { label 'jenkinslave1' }
      environment {
-        scannerHome = tool 'sonarscan’
+        scannerHome = tool 'sonarscan'
      }
      stages {
           stage("clone code") {
